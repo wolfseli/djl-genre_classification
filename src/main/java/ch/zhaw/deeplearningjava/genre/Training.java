@@ -92,7 +92,6 @@ public final class Training {
         model.setProperty("Loss", String.format("%.5f", result.getValidateLoss()));
 
         // save the model after done training for inference later
-        // model saved as shoeclassifier-0000.params
         model.save(modelDir, Models.MODEL_NAME);
 
         // save labels into model directory
