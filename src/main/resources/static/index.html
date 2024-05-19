@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Classification</title>
+    <meta charset="utf-8" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://wallpapers.com/images/hd/vinyl-record-9aok7gfu7tyknwdj.jpg'); /* Pfad zu deinem Hintergrundbild */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 50px;
+            color: #000; /* Textfarbe auf schwarz setzen */
+        }
+
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Weißer Hintergrund mit leichter Transparenz */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Schatten für besseren Kontrast */
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border: 2px solid #007bff;
+            color: #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #answerPart {
+            margin-top: 30px;
+        }
+
+        #previewPart img {
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        #answer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;
+            width: 30%;
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center content-container">
+        <h1>Albumcover Classification</h1>
+        <p>DeepJavaLibrary (DJL) Demonstration by wolfseli</p>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Bitte Albumcover hochladen (jpeg, png)</label>
+                <label class="custom-file-upload">
+                    <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
+                        onchange="checkFiles(this.files);" style="display: none;">
+                    Durchsuchen...
+                </label>
+            </div>
+        </form>
+
+        <div id="answerPart" style="visibility: hidden;">
+            <p><b>Answer:</b></p>
+            <div id="answer"></div>
+
+            <div id="previewPart">
+                <p><b>Analyzed Image:</b></p>
+                <p><img id="preview" width="300" src="#" alt="preview" /></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
